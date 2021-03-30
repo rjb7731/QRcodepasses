@@ -18,9 +18,9 @@ qr = qrcode.QRCode(
     border=4,
 )
 
-qr.add_data('Name =Joe Bloggs ')
-qr.add_data('Address= 1 Downing street, London, SW1 ')
-qr.add_data(f'DateTime= {time_now} ')
+qr.add_data('Name =Joe Bloggs'+' ')
+qr.add_data('Address= 1 Downing street, London, SW1'+' ')
+qr.add_data(f'DateTime= {time_now} '+' ')
 qr.make(fit=True)
 
 img = qr.make_image(fill_color="black", back_color="white")
