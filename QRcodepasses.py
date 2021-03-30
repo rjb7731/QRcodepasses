@@ -27,3 +27,11 @@ qr.make(fit=True)
 img = qr.make_image(fill_color="black", back_color="white")
 
 img.save("Test_sample.jpg")
+
+im = cv.imread("Test_sample.jpg")
+det = cv.QRCodeDetector()
+
+retval, points, straight_qrcode = det.detectAndDecode(im)
+
+print(retval)
+
