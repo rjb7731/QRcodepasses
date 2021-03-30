@@ -1,3 +1,8 @@
+"""To do:
+'Save' to BytesIO instead of locally
+Implement with Flask/Django site
+"""
+
 import qrcode
 import cv2 as CV
 import datetime
