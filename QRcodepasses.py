@@ -1,6 +1,6 @@
 """To do:
-'Save' to BytesIO instead of locally
-Implement with Flask/Django site
+-'Save' to BytesIO instead of locally
+-Implement with Flask/Django site
 """
 
 import qrcode
