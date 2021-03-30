@@ -11,7 +11,6 @@ import os
 time_obj = datetime.datetime.now()
 time_now = time_obj.strftime("%a-%d-%b-%y, %X")
 
-
 qr = qrcode.QRCode(
     version=1,
     error_correction=qrcode.constants.ERROR_CORRECT_H,
@@ -21,17 +20,9 @@ qr = qrcode.QRCode(
 
 qr.add_data('Name =Joe Bloggs ')
 qr.add_data('Address= 1 Downing street, London, SW1 ')
-qr.add_data(f'Time of Arrival= {time_now} ')
-qr.add_data(f'Vaccinated= Yes ')
+qr.add_data(f'DateTime= {time_now} ')
 qr.make(fit=True)
 
-img = qr.make_image(fill_color="black", back_color="white").convert('RGB')
+img = qr.make_image(fill_color="black", back_color="white")
 
 img.save("Test_sample.jpg")
-
-im = cv.imread("Test_sample.jpg")
-det = cv.QRCodeDetector()
-
-retval, points, straight_qrcode = det.detectAndDecode(im)
-
-print(retval)
