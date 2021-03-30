@@ -20,6 +20,7 @@ qr = qrcode.QRCode(
 
 qr.add_data('Name =Joe Bloggs'+' ')
 qr.add_data('Address= 1 Downing street, London, SW1'+' ')
+qr.add_data('Vaccinated= Yes '+' ')
 qr.add_data(f'DateTime= {time_now} '+' ')
 qr.make(fit=True)
 
