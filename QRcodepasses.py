@@ -11,7 +11,21 @@ import os
 time_obj = datetime.datetime.now()
 time_now = time_obj.strftime("%a-%d-%b-%y, %X")
 
-img = qrcode.make(f"Name: Joe Bloggs,  Address: 1 Downing Street,  DateTime:{time_now}")
+
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_H,
+    box_size=10,
+    border=4,
+)
+
+qr.add_data('Name =Joe Bloggs ')
+qr.add_data('Address= 1 Downing street, lLondon, SW1 ')
+qr.add_data(f'DateTime= {time_now} ')
+qr.make(fit=True)
+
+img = qr.make_image(fill_color="black", back_color="white").convert('RGB')
+
 img.save("Test_sample.jpg")
 
 im = cv.imread("Test_sample.jpg")
