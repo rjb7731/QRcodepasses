@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+</head>
+
+<body>
+    <img src="{{ user_image }}" alt="User Image">
+    {% for key,value in form.items() %}
+    <h2> {{key}}</h2>
+    <p> {{value}}</p>
+    {% endfor %}
+</body>
+
+</html>
